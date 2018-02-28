@@ -4,14 +4,18 @@
 <html>  
 <head>  
 <meta charset="utf-8">  
-<title>用户登录界面</title>  
+<title>文件上传下载</title>  
 </head>  
 <body>  
-    <form action="user/login.action"  method="post" style="text-align: center; margin: 80px auto; width: 500px;">  
-        <p>用户名:<input type="text" name="username" /></p>  
-        <p>密码:<input type="password" name="password" /></p>  
-        <input type="submit" value="登录"/>  
+    <form action="excel/upload"  method="post" enctype="multipart/form-data">  
+    	上传明细文件：<input type="file" name="file1" />  明细文件工作表名称:<input type="text" name="file1SheetName" /><br>
+    	上传快递单      ：<input type="file" name="file2" /> 快递单文件工作表名称:<input type="text" name="file2SheetName" /><br>
+    	
+        <input type="submit" value="上传文件"/>  
     </form>  
-      
+    <form action=""
+        method="get">
+        <input type="submit" value="下载">
+    </form>
 </body>  
 </html>  

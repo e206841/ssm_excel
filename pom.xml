@@ -6,7 +6,7 @@
   <packaging>war</packaging>
   
    <build>
-        <finalName>ssm_project</finalName>
+        <finalName>ssm_excel</finalName>
         <plugins>
             <!-- Mybatis generator代码生成插件 配置 -->
             <plugin>

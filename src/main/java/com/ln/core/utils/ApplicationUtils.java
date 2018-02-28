@@ -31,11 +31,13 @@ public class ApplicationUtils implements ApplicationContextAware{
 	
 	public static ApplicationContext applicationContext;
 	
-	public static final String uploadDir="/var/uploaded";
+	public static final String uploadDir="/var/uploaded";//服务器文件存放位置
 	
 	public static String downloadURIRoot="/ldxk/download/tempfile/";
 	
 	public static final String AES_PASSWORD="@simple#aes$pass";
+	
+	public static final String winUploadDir="D:\\ssm_excel";//windows 文件存放位置
 	
 	static{
 		File dir = new File(uploadDir);
@@ -160,5 +162,12 @@ public class ApplicationUtils implements ApplicationContextAware{
     	String filePath = uploadDir+"/"+UUID.randomUUID();
     	return new File(filePath);
     }
-    
+    /**
+     * 创建window临时落地文件对象
+     * @return
+     */
+    public static File createWinUploadTmpFile(){
+    	String filePath = winUploadDir+"\\"+UUID.randomUUID();
+    	return new File(filePath);
+    }
 }
