@@ -24,7 +24,8 @@ public class ExcelUtils {
    private static final String fileUploadPath="D:\\ssm_fileUpload";//windows上传目录
    private static final String fileDownPath="D:\\ssm_fileDown";//windows下载目录
    private static final String uploadPath="var/uploaded";//linux上传目录
-   
+   private static File file1=null;
+   private static File file2=null;
 	/**
 	 * 生成workbook对象
 	 */
@@ -55,20 +56,19 @@ public class ExcelUtils {
 	       
 	       //判断系统 处理目录
 			String os = System.getProperty("os.name");  
-			File file1 =null;
 			if(os.toLowerCase().startsWith("win")){  //window
 				 File file = new  File(fileUploadPath);
 				 //创建一个目录 （它的路径名由当前 File 对象指定，包括任一必须的父路径。）
 			       if (!file.exists()) file.mkdirs();
 			       //新建一个文件
-			        file1 = new File(fileUploadPath +"\\"+fileName+"_"+ new Date().getTime() + ".xlsx");
+			       file1 = new File(fileUploadPath +"\\"+fileName+"_"+ new Date().getTime() + ".xlsx");
 			        
 			}else{									//linux
 				File file = new  File(uploadPath);
 				 //创建一个目录 （它的路径名由当前 File 对象指定，包括任一必须的父路径。）
 			       if (!file.exists()) file.mkdirs();
 			       //新建一个文件
-			        file1 = new File(uploadPath +"/"+fileName+"_"+ new Date().getTime() + ".xlsx");
+			       file1 = new File(uploadPath +"/"+fileName+"_"+ new Date().getTime() + ".xlsx");
 			}
 	      
 	       InputStream is = null;  
