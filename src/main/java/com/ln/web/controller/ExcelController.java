@@ -100,7 +100,7 @@ public class ExcelController {
 		 * 生成file2文件的同时，循环去file1NumberList判断是否有里面的快递单号，如果有此单元格字体标红
 		 */
 		
-		
+		FileInputStream fis=new FileInputStream(file);
 		
 		
 		
